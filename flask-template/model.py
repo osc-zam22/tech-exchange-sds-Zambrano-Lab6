@@ -33,13 +33,4 @@ def checkDicts(userDict):
             result_dict[key] = False
     return result_dict
 
-test_dict = {
-    "New York" : "Albany" ,
-    "Florida" : "Tallahasee" ,
-    "California" : "Sacramento" ,
-    "Texas" : "Austin",
-    "Hawaii" : "not honolulu"
-    }
-
-print(checkDicts(test_dict))
 
