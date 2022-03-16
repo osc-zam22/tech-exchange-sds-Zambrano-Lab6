@@ -15,16 +15,23 @@
 # ---- YOUR APP STARTS HERE ----
 # -- Import section --
 from flask import Flask
-# from flask import render_template
-# from flask import request
-
+from flask import render_template
+from flask import request
+#from model import checkDicts
 
 # -- Initialization section --
 app = Flask(__name__)
 
 
 # -- Routes section --
-@app.route('/')
+@app.route('/states', methods=['GET', 'POST'])
+def states():
+    if request.method == 'GET':
+        return "Form is empty"
+    else:
+        state = request.form['state']
+        #answer = checkDicts('state')
+        #return render_template("index.html", state=state, answer=answer)
 @app.route('/index')
 def index():
     return "hello world"
