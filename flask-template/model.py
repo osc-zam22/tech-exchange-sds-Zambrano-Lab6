@@ -29,9 +29,17 @@ def checkDicts(userDict):
         "Hawaii" : True
     }
     for key in userDict.keys():
-        if userDict[key] != answer_key[key] :
+        if userDict[key].lower != answer_key[key].lower :
             result_dict[key] = False
     return result_dict
 
+test_dict = {
+    "New York" : "Albany" ,
+    "Florida" : "Tallahasee" ,
+    "California" : "Sacramento" ,
+    "Texas" : "Austin",
+    "Hawaii" : "not honolulu"
+    }
 
-    
+print(checkDicts(test_dict))
+
