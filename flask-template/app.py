@@ -17,21 +17,42 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-#from model import checkDicts
+from model import *
+from collections import defaultdict
 
 # -- Initialization section --
 app = Flask(__name__)
 
 
 # -- Routes section --
-@app.route('/states', methods=['GET', 'POST'])
-def states():
-    if request.method == 'GET':
-        return "Form is empty"
-    else:
-        state = request.form['state']
-        #answer = checkDicts('state')
-        #return render_template("index.html", state=state, answer=answer)
+@app.route('/')
 @app.route('/index')
 def index():
-    return "hello world"
+    return render_template('index.html')
+
+
+@app.route('/results', methods=['GET', 'POST'])
+def results():
+    if request.method == 'GET':
+        return "Form is empty"
+    
+    answers = [] 
+    userDict = {} 
+    results = []
+
+    # creating userDict for checkDicts()
+    for item in request.form:
+        userDict[item] = request.form[item]
+
+    # answers from answer_key to display in results.html
+    for val in answer_key.values():
+        answers.append(val)
+    
+    # putting items from checkDicts into list because dictionarys cant be passed into 'render_templates' 
+    for key, val in checkDicts(userDict).items():
+        results.append({key: val})
+
+    return render_template('results.html', results = results, answers = answers)       
+
+if __name__ == "__main__":
+    app.run(debug=True)

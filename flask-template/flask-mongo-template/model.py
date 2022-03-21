@@ -12,25 +12,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-answer_key = {
-    "New York" : "Albany" ,
-    "Florida" : "Tallahassee" ,
-    "California" : "Sacramento" ,
-    "Texas" : "Austin",
-    "Hawaii" : "Honolulu"
-    }
-
-def checkDicts(userDict):
-    result_dict = {
-        "New York" : True,
-        "Florida" : True,
-        "California" : True,
-        "Texas" : True,
-        "Hawaii" : True
-    }
-    for key in userDict.keys():
-        if userDict[key].lower() != answer_key[key].lower():
-            result_dict[key] = False
-    return result_dict
-
-
+# master list of genres
+genres = ["comedy","crime","fantasy","romance","science-fiction","speculative-fiction","literature","non-fiction"]
