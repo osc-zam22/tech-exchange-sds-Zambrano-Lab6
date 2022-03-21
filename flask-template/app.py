@@ -48,7 +48,7 @@ def results():
     for val in answer_key.values():
         answers.append(val)
     
-    # putting items from checkDicts into list because dictionarys cant be passed into 'render_templates' 
+    # putting items from the dict returned from checkDicts() into a list because dictionarys cant be passed into 'render_templates' 
     for key, val in checkDicts(userDict).items():
         results.append({key: val})
 
