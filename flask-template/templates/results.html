@@ -1,15 +1,12 @@
 <html>
     <h1>Results</h1>
 
-    {% for result in results %}
-        {% set outer_loop = loop %}
-        {% for key, val in result.items() %}
-            {% if val %}
-                <p>Correct, {{ answers[outer_loop.index0] }} is the capital of {{key}}!</p>
-            {% else %}
-                <p>Incorrect, the Capital of {{ key }} is {{ answers[outer_loop.index0] }}. </p>
-            {% endif %}
-        {% endfor %}
+    {% for key, val in result.items() %}
+        {% if val %}
+            <p>Correct, {{ answer_key[key] }} is the Capital of {{ key }}. </p>
+        {% else %}
+            <p>Incorrect, the Capital of {{ key }} is {{ answer_key[key] }}. </p>
+        {% endif %}
     {% endfor %}
 
 </html>
