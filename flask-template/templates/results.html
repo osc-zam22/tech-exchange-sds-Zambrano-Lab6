@@ -1,11 +1,17 @@
 <html>
-    <h1>Results</h1>
+    <head>
+        <title>Flask Template</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+
+    <h1><strong>Results</strong></h1>
 
     {% for key, val in result.items() %}
         {% if val %}
-            <p>Correct, {{ answer_key[key] }} is the Capital of {{ key }}. </p>
+            <div class="container card row col-center-align result" id="correct"><p><strong>Correct</strong>, {{ answer_key[key] }} is the Capital of {{ key }}. </p></div>
         {% else %}
-            <p>Incorrect, the Capital of {{ key }} is {{ answer_key[key] }}. </p>
+            <div class="container card row col-center-align result" id="incorrect"><p><strong>Incorrect</strong>, the Capital of {{ key }} is {{ answer_key[key] }}. </p></div>
         {% endif %}
     {% endfor %}
 

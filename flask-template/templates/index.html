@@ -17,17 +17,19 @@
 <html>
     <head>
         <title>Flask Template</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="../static/css/style.css">
     </head>
     <body>
-        <h1>Do you know the Capital of these five states?</h1>
-        <form method="post" action="/results">
-            <input type="text" name="New York" placeholder="New York"/>
-            <input type="text" name="Florida" placeholder="Florida"/>
-            <input type="text" name="California" placeholder="California"/>
-            <input type="text" name="Texas" placeholder="Texas"/>
-            <input type="text" name="Hawaii" placeholder="Hawaii"/>
-            <input type="submit" value="Submit"/>
+        <h1><strong>Do you know the Capital of these five states?</strong></h1>
+        <div class="container card row col-center-align"><form method="post" action="/results">
+            <div class="state" id="ny"><input type="text" name="New York" placeholder="New York"/></div>
+            <div class="state" id="fl"><input type="text" name="Florida" placeholder="Florida"/></div>
+            <div class="state" id="ca"><input type="text" name="California" placeholder="California"/></div>
+            <div class="state" id="tx"><input type="text" name="Texas" placeholder="Texas"/></div>
+            <div class="state" id="hi"><input type="text" name="Hawaii" placeholder="Hawaii"/></div>
+            <input class="btn-large" type="submit" value="Submit"/>
         </form>
+    </div>
     </body>
 </html>
